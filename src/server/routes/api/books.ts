@@ -33,7 +33,7 @@ router.get('/:id?', async (req, res, next) => {
     }
 });
 
-router.post('/', async (req, res, next) => {
+router.post('/', isAdmin, async (req, res, next) => {
     try {
         let title = req.body.title;
         let author = req.body.author;
@@ -45,7 +45,7 @@ router.post('/', async (req, res, next) => {
     }
 });
 
-router.put('/:id', async (req, res, next) => {
+router.put('/:id', isAdmin, async (req, res, next) => {
     try {
         let id = req.params.id;
         let title = req.params.title;
@@ -58,7 +58,7 @@ router.put('/:id', async (req, res, next) => {
     }
 });
 
-router.delete('/:id', async (req, res, next) => {
+router.delete('/:id', isAdmin, async (req, res, next) => {
     try {
         let id = req.params.id;
         res.json(await db.books.deleteBook(id));

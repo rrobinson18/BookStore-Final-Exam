@@ -7,6 +7,8 @@ import Home from './components/public/Home';
 import AllBooks from './components/public/AllBooks';
 import BookDetails from './components/public/BookDetails';
 import Admin from './components/admin/Admin';
+import Login from './components/admin/Login';
+import Register from './components/admin/Register';
 
 export interface AppProps {}
 
@@ -20,8 +22,8 @@ const App: React.SFC<AppProps> = () => {
                 <Route exact path="/books" component={AllBooks} />
                 <Route exact path="/:id/details" component={BookDetails} />
                 <Route exact path="/:id/admin" component={Admin} />
-                {/* <Route exact path="/:id/login" component={Login} />
-                <Route exact path="/:id/register" component={register} /> */}
+                <Route exact path="/login" component={Login} />
+                <Route exact path="/register" component={Register} />  */}
             </Switch>
             </main>
         </BrowserRouter>

@@ -15,6 +15,7 @@ export default class Nav extends React.Component<INavProps, INavState> {
       <nav className="navbar navbar-expand-sm bg-dark navbar-success">
         <ul className="navbar-nav justify-content-end">
           <li className="nav-item">
+          <Link to="/" className="mt-5 mx-5 mb-5">Home</Link>
           <Link to="/login" className="mt-5 mx-5 mb-5">Log In</Link>
           <Link to="/register" className="mt-5 mx-5 mb-5">Register</Link>
          </li>

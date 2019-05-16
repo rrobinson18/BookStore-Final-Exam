@@ -33,7 +33,7 @@ export default class Admin extends React.Component<IAdminProps, IAdminState> {
         let id = this.props.match.params.id;
         
         try {
-            let book = await json(`/api/admin/${id}`);
+            let book = await json(`/api/view/${id}`);
             this.setState({
                 id: book.id,
                 title: book.title, 
@@ -60,7 +60,7 @@ export default class Admin extends React.Component<IAdminProps, IAdminState> {
         try {
 
             this.saving = true;
-            let result = await json(`/api/admin/${id}`, 'PUT', body);
+            let result = await json(`/api/view/${id}`, 'PUT', body);
             if(result) {
                 this.setState({
                     title: '',
@@ -87,7 +87,7 @@ export default class Admin extends React.Component<IAdminProps, IAdminState> {
         let id = this.props.match.params.id;
         try {
             this.delete = true;
-            let result = await json(`/api/admin/${id}`, 'DELETE');
+            let result = await json(`/api/view/${id}`, 'DELETE');
             if (result) {
                 this.setState({ 
                     title: '',
