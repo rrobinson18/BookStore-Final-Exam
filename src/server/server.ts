@@ -1,21 +1,20 @@
 import * as path from 'path';
 import * as express from 'express';
-import apiRouter from './routes';
 import * as passport from 'passport';
 
 import './middleware/bearerstrategy';
 import './middleware/localstrategy';
+import routes from './routes';
 
 const app = express();
 
 let p = path.join(__dirname, '../public');
 
-
-app.use(express.static(p));
 app.use(express.json());
+app.use(express.static(p));
 app.use(passport.initialize());
 
-app.use(apiRouter);
+app.use(routes);
 
 
 app.get('*', (req, res, next) => {

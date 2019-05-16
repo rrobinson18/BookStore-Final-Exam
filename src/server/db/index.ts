@@ -1,5 +1,9 @@
 import * as mysql from 'mysql';
 
+import books from './queries/books';
+import categories from './queries/categories';
+import tokens from './queries/tokens';
+import users from './queries/users';
 
 let pool = mysql.createPool({
     connectionLimit: 10,
@@ -17,3 +21,10 @@ export const Query = (query: string, values?: any) => {
         });
     });
 };
+
+export default {
+books,
+categories,
+tokens,
+users
+}
