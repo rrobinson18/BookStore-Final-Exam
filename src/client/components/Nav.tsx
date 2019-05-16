@@ -26,4 +26,6 @@ export default class Nav extends React.Component<INavProps, INavState> {
 
 interface INavProps {}
 
-interface INavState {}
+interface INavState {
+    books: { id: number; title: string, author: string, price: number}[];
+}

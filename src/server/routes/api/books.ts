@@ -1,8 +1,8 @@
-import * as express from 'express';
+import { Router } from 'express';
 import db from '../../db';
 import { RequestHandler } from 'express-serve-static-core';
 
-let router = express.Router();
+let router = Router();
 
 const isAdmin: RequestHandler = (req, res, next) => {
     if(!req.user || req.user.role !== 'admin') {
