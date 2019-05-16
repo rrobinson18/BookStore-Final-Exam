@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(express.static(p));
 app.use(passport.initialize());
 
-app.use(routes);
+app.use('/api', routes);
 
 
 app.get('*', (req, res, next) => {
