@@ -1,18 +1,14 @@
 import * as React from 'react';
-import { useState, useEffect } from 'react';
 import { RouteComponentProps } from 'react-router';
-import { json } from '../utils/api';
+import { json } from '../../utils/api';
 import { Link } from 'react-router-dom';
 
-export interface BookDetailsProps extends RouteComponentProps<{ id: string }> {}
- 
-const BookDetails: React.SFC<BookDetailsProps> = props => {
+export default class BookDetails extends  React.Component<IBookDetailsProps, IBookDetailsState> {
+    constructor(props: IBookDetailsProps) {
+        super(props);
+    }
+}
 
-    const [book, setBook] = useState<any>({});
-    useEffect(() => {
-        json(`/api/books/${props.match.params.id}`)
-        .then(book => setBook(book));
-    }, []);
 
     return (  
         <section className="row justify-content-center">
@@ -28,6 +24,8 @@ const BookDetails: React.SFC<BookDetailsProps> = props => {
             </article>
         </section>
     );
-}
+
  
-export default BookDetails;
+interface IBookDetailsProps {}
+
+interface IBookDetailsState {}
